@@ -346,8 +346,8 @@ fn main() {
     io::stdin()
         .read_line(&mut path)
         .expect("Failed to read line");
-
     path = path.trim().to_string();
+    path = path.replace("\"", "");
 
     if !Path::new(&path).exists() {
         println!("No file exists at the given path");
